@@ -18,37 +18,33 @@ import main.java.com.example.journal_app_firstproject.entity.JournalEntity;
 
 @RestController
 @RequestMapping("/journal")
-public class journalEntryController {
-
-    private Map<Long, JournalEntity> journalentity = new HashMap<>();
+public class journalEntryControllerV2
+{
 
     @GetMapping
     public List<JournalEntity> getall() {
-        return new ArrayList<>(journalentity.values());
+        return null;
     }
 
     @PostMapping
     public boolean display(@RequestBody JournalEntity myEntity) {
-        journalentity.put(myEntity.getId(), myEntity);
         return true;
     }
 
     @DeleteMapping("/id/{myid}")
     public String delete(@PathVariable Long myid) {
-        journalentity.remove(myid);
+
         return "Deleted successfully";
     }
 
     @GetMapping("id/{myid}")
-    public JournalEntity search(@PathVariable Long myid)
-    {
-        return journalentity.get(myid);
+    public JournalEntity search(@PathVariable Long myid) {
+        return null;
     }
 
     @PutMapping("/id/{myid}")
-    public JournalEntity update(@PathVariable Long myid, @RequestBody JournalEntity myEntity )
-    {
-        return journalentity.put(myid,myEntity);
+    public JournalEntity update(@PathVariable Long myid, @RequestBody JournalEntity myEntity) {
+
+        return null;
     }
 }
-
